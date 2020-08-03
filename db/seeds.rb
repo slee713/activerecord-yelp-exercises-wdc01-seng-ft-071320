@@ -4,7 +4,7 @@ Dish.destroy_all
 Tag.destroy_all
 DishTag.destroy_all
 
-tag_names = ["Spicy", "Sweet", "Vegitarian", "Vegan", "Meat Lover",
+tag_names = ["Spicy", "Sweet", "Vegetarian", "Vegan", "Meat Lover",
 "Gluten Free", "Saucy", "Salt-free", "Extra Cheesy", "All Natural", "Steak",
 "Halal", "Kosher"]
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_03_182559) do
+ActiveRecord::Schema.define(version: 2020_08_03_153929) do
 
   create_table "dish_tags", force: :cascade do |t|
     t.integer "dish_id"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2020_08_03_182559) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
-    t.integer "dish_count"
   end
 
   create_table "tags", force: :cascade do |t|
