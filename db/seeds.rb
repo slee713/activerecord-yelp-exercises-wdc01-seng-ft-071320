@@ -8,7 +8,12 @@ tag_names = ["Spicy", "Sweet", "Vegitarian", "Vegan", "Meat Lover",
 "Gluten Free", "Saucy", "Salt-free", "Extra Cheesy", "All Natural", "Steak",
 "Halal", "Kosher"]
 
-20.times {Restaurant.create(name: Faker::Restaurant.name)  }
+rest_names = ["McDonalds", "Burger King", "Outback Steakhouse", "Red Robbins",
+"Tropical Smoothie", "Five Guys", "Chipotle", "Pot Belly", "Mike's American Grill",
+"Wendy's", "Taco Bamba", "Oh George's", "Pho 75", "Taco Bell", "Chic Fil A", "Jersey's Mike",
+"Sweetwater", "Chicken & Beer", "Choongman Chicken", "Dominos"]
+
+rest_names.each {|name| Restaurant.create(name: name)}
 
 Restaurant.all.each { |restaurant| 10.times {Dish.create(name: Faker::Food.dish, restaurant_id: restaurant.id)}}
 
