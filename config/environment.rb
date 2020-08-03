@@ -1,5 +1,5 @@
 require "bundler/setup"
-
+require 'faker'
 require "sinatra/activerecord"
 
 Bundler.require
