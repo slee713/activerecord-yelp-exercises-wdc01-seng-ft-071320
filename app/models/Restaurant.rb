@@ -13,27 +13,24 @@ class Restaurant < ActiveRecord::Base
     end
 
     def self.with_long_names
-        
+        where('LENGTH(name) > 12')
     end
 
 
     def self.max_dishes
-        Restaurant.update_dish_count
-        Restaurant.order(dishes.count).first
+        joins(:dishes).order('COUNT(dishes.id) DESC').group(:restaurant_id).first
     end
 
     def self.focused
-        Restaurant.update_dish_count
-        Restaurant.where("dish_count < 5")
+        joins(:dishes).having('COUNT(dishes.id) < 5').group(:restaurant_id)
     end
 
     def self.large_menu
-        Restaurant.update_dish_count
-        Restaurant.where("dish_count > 20")
+        joins(:dishes).having('COUNT(dishes.id) >9').group(:restaurant_id)
     end
 
     def self.vegetarian
-        # Restaurant.joins(:dish_tags).joins
+        joins(:dishes).joins(:dish_tag)
     end
 
    
